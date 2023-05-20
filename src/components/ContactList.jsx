@@ -18,11 +18,9 @@ export const ContactList = () => {
   useEffect(() => {
     dispatch(fetchContact());
   }, [dispatch]);
-  console.log(contacts);
 
 
   const filterContactsList = contacts.filter(contact => {
-    console.log(contact)
     return contact.name.toLowerCase().includes(filterValue);
   });
   return (

@@ -15,12 +15,10 @@ export function ContactForm() {
   const dispatch = useDispatch();
 
   const onSubmit = e => {
-    console.log(e);
     const id = nanoid();
     const name = e.name;
     const number = e.number;
     const contactsLists = [...contacts];
-    console.log(contactsLists);
 
     if (
       contactsLists.findIndex(
