@@ -1,0 +1,28 @@
+
+.List {
+  display: flex;
+  justify-content: center;
+}
+
+.Item {
+  display: block;
+  margin-right: 20px;
+}
+
+.StyledLink {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 17px;
+
+  &.active {
+    color: #2196F3;
+    background: lightgrey;
+  }
+
+  &:hover,
+  &:focus {
+    background: rgb(239, 235, 233);
+    color: #2196F3;
+  }}

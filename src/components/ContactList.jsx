@@ -8,9 +8,10 @@ import {
 } from '../redux/selectors';
 import { useEffect } from 'react';
 import { fetchContact } from 'service/contactData';
+import css from './ContactList.module.css'
 
 export const ContactList = () => {
-  const filterValue = useSelector(selectFilteredContacts);
+  const filterValue = useSelector(selectFilteredContacts).toLowerCase();
   const contacts = useSelector(selectContacts)
   const dispatch = useDispatch();
 
@@ -25,13 +26,14 @@ export const ContactList = () => {
   });
   return (
     <div>
-      <ul>
+      <ul className={css.list}>
         {filterContactsList.map(contact => (
-          <li key={nanoid()}>
+          <li className={css.item} key={nanoid()}>
             {contact.name}: {contact.number}
             <button
+              className={css.button}
               type="button"
-              onClick={()=> dispatch(removeContact(contact.id))}
+              onClick={() => dispatch(removeContact(contact.id))}
             >
               Delete
             </button>
